@@ -5,7 +5,9 @@
                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
     <changeSet id="${project.parent.artifactId}-20180613-101" author="ekirapa">
         <preConditions onFail="MARK_RAN" onError="WARN">
-            <sqlCheck expectedResult="0">SELECT COUNT(*) FROM inv_item;</sqlCheck>
+            <not>
+                <tableExists tableName="inv_item"/>
+            </not>
         </preConditions>
         <createTable tableName="inv_item">
             <column name="item_id" autoIncrement="true" type="int">
@@ -48,7 +50,9 @@
     </changeSet>
     <changeSet id="${project.parent.artifactId}-20180613-102" author="ekirapa">
         <preConditions onFail="MARK_RAN" onError="WARN">
-            <sqlCheck expectedResult="0">SELECT COUNT(*) FROM inv_item_attribute_type;</sqlCheck>
+            <not>
+                <tableExists tableName="inv_item_attribute_type"/>
+            </not>
         </preConditions>
         <createTable tableName="inv_item_attribute_type">
             <column name="item_attribute_type_id" type="int" autoIncrement="true">
@@ -87,7 +91,9 @@
     </changeSet>
     <changeSet id="${project.parent.artifactId}-20180613-103" author="ekirapa">
         <preConditions onFail="MARK_RAN" onError="WARN">
-            <sqlCheck expectedResult="0">SELECT COUNT(*) FROM item_attribute_id;</sqlCheck>
+            <not>
+                <tableExists tableName="inv_item_attribute"/>
+            </not>
         </preConditions>
         <createTable tableName="inv_item_attribute">
             <column name="item_attribute_id" type="int" autoIncrement="true">
@@ -123,7 +129,9 @@
     </changeSet>
     <changeSet id="${project.parent.artifactId}-20180613-104" author="ekirapa">
         <preConditions onFail="MARK_RAN" onError="WARN">
-            <sqlCheck expectedResult="0">SELECT COUNT(*) FROM inv_item_price;</sqlCheck>
+            <not>
+                <tableExists tableName="inv_item_price"/>
+            </not>
         </preConditions>
         <createTable tableName="inv_item_price">
             <column name="item_price_id" autoIncrement="true" type="int">
@@ -160,7 +168,9 @@
     </changeSet>
     <changeSet id="${project.parent.artifactId}-20180613-105" author="ekirapa">
         <preConditions onFail="MARK_RAN" onError="WARN">
-            <sqlCheck expectedResult="0">SELECT COUNT(*) FROM inv_item_code;</sqlCheck>
+            <not>
+                <tableExists tableName="inv_item_code"/>
+            </not>
         </preConditions>
         <createTable tableName="inv_item_code">
             <column name="item_code_id" autoIncrement="true" type="int">
@@ -197,7 +207,9 @@
     </changeSet>
     <changeSet id="${project.parent.artifactId}-20180613-106" author="ekirapa">
         <preConditions onFail="MARK_RAN" onError="WARN">
-            <sqlCheck expectedResult="0">SELECT COUNT(*) FROM inv_department;</sqlCheck>
+            <not>
+                <tableExists tableName="inv_department"/>
+            </not>
         </preConditions>
         <createTable tableName="inv_department">
             <column name="department_id" autoIncrement="true" type="int">
@@ -229,7 +241,9 @@
     </changeSet>
     <changeSet id="${project.parent.artifactId}-20180613-107" author="ekirapa">
         <preConditions onFail="MARK_RAN" onError="WARN">
-            <sqlCheck expectedResult="0">SELECT COUNT(*) FROM inv_category;</sqlCheck>
+            <not>
+                <tableExists tableName="inv_category"/>
+            </not>
         </preConditions>
         <createTable tableName="inv_category">
             <column name="category_id" autoIncrement="true" type="int">
@@ -262,7 +276,9 @@
     </changeSet>
     <changeSet id="${project.parent.artifactId}-20180613-108" author="ekirapa">
         <preConditions onFail="MARK_RAN" onError="WARN">
-            <sqlCheck expectedResult="0">SELECT COUNT(*) FROM inv_stockroom;</sqlCheck>
+            <not>
+                <tableExists tableName="inv_stockroom"/>
+            </not>
         </preConditions>
         <createTable tableName="inv_stockroom">
             <column name="stockroom_id" autoIncrement="true" type="int">
@@ -295,7 +311,9 @@
     </changeSet>
     <changeSet id="${project.parent.artifactId}-20180613-109" author="ekirapa">
         <preConditions onFail="MARK_RAN" onError="WARN">
-            <sqlCheck expectedResult="0">SELECT COUNT(*) FROM inv_stockroom_item;</sqlCheck>
+            <not>
+                <tableExists tableName="inv_stockroom_item"/>
+            </not>
         </preConditions>
         <createTable tableName="inv_stockroom_item">
             <column name="stockroom_item_id" autoIncrement="true" type="int">
@@ -319,7 +337,9 @@
     </changeSet>
     <changeSet id="${project.parent.artifactId}-20180613-110" author="ekirapa">
         <preConditions onFail="MARK_RAN" onError="WARN">
-            <sqlCheck expectedResult="0">SELECT COUNT(*) FROM inv_stock_operation_type;</sqlCheck>
+            <not>
+                <tableExists tableName="inv_stock_operation_type"/>
+            </not>
         </preConditions>
         <createTable tableName="inv_stock_operation_type">
             <column name="stock_operation_type_id" autoIncrement="true" type="int">
@@ -364,7 +384,9 @@
     </changeSet>
     <changeSet id="${project.parent.artifactId}-20180613-111" author="ekirapa">
         <preConditions onFail="MARK_RAN" onError="WARN">
-            <sqlCheck expectedResult="0">SELECT COUNT(*) FROM inv_stock_operation_attribute_type;</sqlCheck>
+            <not>
+                <tableExists tableName="inv_stock_operation_attribute_type"/>
+            </not>
         </preConditions>
         <createTable tableName="inv_stock_operation_attribute_type">
             <column name="stock_operation_attribute_type_id" autoIncrement="true" type="int">
@@ -407,7 +429,9 @@
     </changeSet>
     <changeSet id="${project.parent.artifactId}-20180613-112" author="ekirapa">
         <preConditions onFail="MARK_RAN" onError="WARN">
-            <sqlCheck expectedResult="0">SELECT COUNT(*) FROM inv_stock_operation;</sqlCheck>
+            <not>
+                <tableExists tableName="inv_stock_operation"/>
+            </not>
         </preConditions>
         <createTable tableName="inv_stock_operation">
             <column name="stock_operation_id" autoIncrement="true" type="int">
@@ -448,7 +472,9 @@
     </changeSet>
     <changeSet id="${project.parent.artifactId}-20180613-113" author="ekirapa">
         <preConditions onFail="MARK_RAN" onError="WARN">
-            <sqlCheck expectedResult="0">SELECT COUNT(*) FROM inv_stock_operation_attribute;</sqlCheck>
+            <not>
+                <tableExists tableName="inv_stock_operation_attribute"/>
+            </not>
         </preConditions>
         <createTable tableName="inv_stock_operation_attribute">
             <column name="stock_operation_attribute_id" autoIncrement="true" type="int">
@@ -471,7 +497,9 @@
     </changeSet>
     <changeSet id="${project.parent.artifactId}-20180613-114" author="ekirapa">
         <preConditions onFail="MARK_RAN" onError="WARN">
-            <sqlCheck expectedResult="0">SELECT COUNT(*) FROM inv_transaction;</sqlCheck>
+            <not>
+                <tableExists tableName="inv_transaction"/>
+            </not>
         </preConditions>
         <createTable tableName="inv_transaction">
             <column name="transaction_id" autoIncrement="true" type="int">
@@ -505,7 +533,9 @@
     </changeSet>
     <changeSet id="${project.parent.artifactId}-20180613-115" author="ekirapa">
         <preConditions onFail="MARK_RAN" onError="WARN">
-            <sqlCheck expectedResult="0">SELECT COUNT(*) FROM inv_reserved_transaction;</sqlCheck>
+            <not>
+                <tableExists tableName="inv_reserved_transaction"/>
+            </not>
         </preConditions>
         <createTable tableName="inv_reserved_transaction">
             <column name="reserved_transaction_id" autoIncrement="true" type="int">
@@ -540,7 +570,9 @@
     </changeSet>
     <changeSet id="${project.parent.artifactId}-20180613-116" author="ekirapa">
         <preConditions onFail="MARK_RAN" onError="WARN">
-            <sqlCheck expectedResult="0">SELECT COUNT(*) FROM inv_stockroom_operations;</sqlCheck>
+            <not>
+                <tableExists tableName="inv_stockroom_operations"/>
+            </not>
         </preConditions>
         <createTable tableName="inv_stockroom_operations">
             <column name="stockroom_id" type="int">
@@ -553,7 +585,9 @@
     </changeSet>
     <changeSet id="${project.parent.artifactId}-20180613-117" author="ekirapa">
         <preConditions onFail="MARK_RAN" onError="WARN">
-            <sqlCheck expectedResult="0">SELECT COUNT(*) FROM inv_institution;</sqlCheck>
+            <not>
+                <tableExists tableName="inv_institution"/>
+            </not>
         </preConditions>
         <createTable tableName="inv_institution">
             <column name="institution_id" autoIncrement="true" type="int">
@@ -585,7 +619,9 @@
     </changeSet>
     <changeSet id="${project.parent.artifactId}-20180613-118" author="ekirapa">
         <preConditions onFail="MARK_RAN" onError="WARN">
-            <sqlCheck expectedResult="0">SELECT COUNT(*) FROM inv_recipient;</sqlCheck>
+            <not>
+                <tableExists tableName="inv_recipient"/>
+            </not>
         </preConditions>
         <createTable tableName="inv_recipient">
             <column name="recipient_id" type="int">
@@ -615,22 +651,18 @@
             </column>
         </createTable>
     </changeSet>
-
-    <!--
-        <changeSet author="ekirapa" id="${project.parent.artifactId}-20180613-119">
-            <addNotNullConstraint
-                    columnDataType="varchar(50)"
-                    columnName="role"
-                    schemaName="public"
-                    tableName="inv_stock_operation_type"/>
-        </changeSet>
-    -->
-
-    <changeSet id="${project.parent.artifactId}-20180613-120" author="ekirapa" runOnChange="true">
+    <changeSet id="${project.parent.artifactId}-20180613-121" author="ekirapa">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <indexExists indexName="inv_item_name_idx"/>
+            </not>
+        </preConditions>
         <createIndex indexName="inv_item_name_idx" tableName="inv_item" unique="false">
             <column name="name"/>
             <column name="retired"/>
         </createIndex>
+    </changeSet>
+    <changeSet id="${project.parent.artifactId}-20180613-120" author="ekirapa">
         <createIndex indexName="inv_item_department_name_idx" tableName="inv_item" unique="false">
             <column name="department_id"/>
             <column name="name"/>
